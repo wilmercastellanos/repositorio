@@ -21,7 +21,7 @@ public class ejercisio1 {
             descuento = 10;
         } else if (numero < 10) {
             descuento = 20;
-        } else {
+        } else  {
             descuento = 40;
         }
         int valorDescuento = descuento * (valorTotal / 100);

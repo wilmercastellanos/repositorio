@@ -9,28 +9,28 @@ package taller;
 import java.util.Scanner;
 public class ejercisio1 {
     public static void main(String[] args) {
-        double precioComputadora = 500;
+        int precioComputadora = 500;
         Scanner scanner = new Scanner(System.in);
         System.out.print("cuantas computadoras compró:");
         int numero = scanner.nextInt();
 
-        double valorTotal = numero * precioComputadora;
-        double descuento;
+        int valorTotal = numero * precioComputadora;
+        int descuento;
 
         if (numero < 5) {
-            descuento = 0.1;
+            descuento = 10;
         } else if (numero < 10) {
-            descuento = 0.2;
+            descuento = 20;
         } else {
-            descuento = 0.4;
+            descuento = 40;
         }
+        int valorDescuento = descuento * (valorTotal / 100);
+        int valorConDescuento = valorTotal - valorDescuento;
 
-        double valorConDescuento = valorTotal - (valorTotal * descuento);
-
-        // Mostrar el resultado
-        System.out.println("valor total: $" + valorTotal);
-        System.out.println("Descuento: " + (descuento * 100) + "%");
-        System.out.println("valor con descuento: $" + valorConDescuento);
+        System.out.println("valor total: " + valorTotal);
+        System.out.println("Descuento del: " + (descuento) + "%");
+        System.out.println("valor del descuento: " + valorDescuento);
+        System.out.println("valor total con descuento: " + valorConDescuento);
     }
 }
 

@@ -17,16 +17,15 @@ public class ejercisio4 {
        double descuento = 0;
 
        if (kilos > 10.0) {
-            descuento = 20;
+            System.out.println("descuento del 20%");
         } else if (kilos > 5.0) {
-            descuento = 15;
+            System.out.println("descuento del 15%");
         } else if (kilos > 2.0) {
-            descuento = 10;
+            System.out.println("descuento del 10%");
         } else if (kilos > 0.0) {
-            descuento = 0;
+            System.out.println("descuento del 5%");
         }
   
-        System.out.println("Descuento del: " + (descuento) + "%");
 
     }
     

@@ -33,6 +33,7 @@ public class ejercisio2 {
 
         System.out.println("Precio de cada llanta: " + precio);
         System.out.println("Precio total: " + precioTotal);
+        scanner.close();
 
     }      
     

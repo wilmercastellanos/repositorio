@@ -37,6 +37,7 @@ public class ejercisio1 {
         System.out.println("Descuento del: " + (descuento) + "%");
         System.out.println("valor del descuento: " + valorDescuento);
         System.out.println("valor total con descuento: " + valorConDescuento);
+        scanner.close();
     }
 }
 

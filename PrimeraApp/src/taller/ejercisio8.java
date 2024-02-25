@@ -33,9 +33,9 @@ public class ejercisio8 {
         } else if (edad < 60 && antiguedad > 25) {
             System.out.println("esta inscrito a jubilacion por antiguedad joven");
         } else if (edad > 60 && antiguedad > 25) {
-            System.out.println("esta inscrito a jubilacion por antiguedad antiguedad adulta");
+            System.out.println("esta inscrito a jubilacion por antiguedad antiguedad adulta");  
         }
-    
-    }
-    
+        
+    scanner.close();
+    }    
 }

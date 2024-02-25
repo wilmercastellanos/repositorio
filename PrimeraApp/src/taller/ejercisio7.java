@@ -88,5 +88,6 @@ public class ejercisio7 {
         System.out.println("El precio del descuento es: " + valorDescuento);
         System.out.println("El precio total es: " + valorTotal);
     
+        scanner.close();
     }
 }

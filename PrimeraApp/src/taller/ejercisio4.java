@@ -32,7 +32,7 @@ public class ejercisio4 {
             System.out.println("descuento del 5%");
         }
   
-
+       scanner.close();
     }
     
 }

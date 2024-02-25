@@ -41,6 +41,7 @@ public class ejercisio3 {
         System.out.println("El precio parcial es: " + precioSinIva);
         System.out.println("El precio del iva es: " + iva);
         System.out.println("El precio total es: " + precioConIva);
+        scanner.close();
     }
     
 }

@@ -5,7 +5,7 @@ package Ejercisio_8a1;
  *
  * @author Wilmer Felipe Castellanos Salazar
  */
-public class mejoras {
+/*public class mejoras {
     // Mejora 1: Crea 2 Cuadrados y 2 Rectángulos, mételos todos en un array, y recorriendo luego el array, escribe en consola:
 // - La suma de las areas de todas las formas del array
 // - La media de las areas de solo los cuadrados que hay en el array
@@ -120,3 +120,4 @@ class Cuadrado extends Forma implements IFormas {
 }
     
 }
+*/

@@ -101,7 +101,7 @@ public class Vehiculo {
         impuestoCirculacion = precio * 0.02;
     }
     
-    public boolean placa(String placa) {
+    public boolean matricular(String placa) {
         if(placa.length() ==6){
             this.placa = placa;
             return true;

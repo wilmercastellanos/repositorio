@@ -1,21 +1,19 @@
-
 package Parcial2;
 
 /**
  *
- * @author Wilmer Felipe Castellanos Salazar
- * Crear clase Auto que hereda de Vehiculo. Esta clase tiene además los atributos:
-• boolean tieneRadio , que se asigna en el constructor
-• boolean tieneNavegador , que se asigna en el constructor
-
-• Además para un auto, el impuestoCirculacion se incrementa en un 1% más al precio
-de la cuota normal de vehículo si tiene radio y un 2% más al precio de la cuota normal
-de vehículo si tiene navegador.
-• El atributo cuotaMesGarage se aumenta en 20 % si el cilindraje del auto es mayor de
-2499.
+ * @author Wilmer Felipe Castellanos Salazar Crear clase Auto que hereda de
+ * Vehiculo. Esta clase tiene además los atributos: • boolean tieneRadio , que
+ * se asigna en el constructor • boolean tieneNavegador , que se asigna en el
+ * constructor
+ *
+ * • Además para un auto, el impuestoCirculacion se incrementa en un 1% más al
+ * precio de la cuota normal de vehículo si tiene radio y un 2% más al precio de
+ * la cuota normal de vehículo si tiene navegador. • El atributo cuotaMesGarage
+ * se aumenta en 20 % si el cilindraje del auto es mayor de 2499.
  */
+public final class Auto extends Vehiculo {
 
-public class Auto extends Vehiculo {
     private boolean tieneRadio;
     private boolean tieneNavegador;
 
@@ -23,8 +21,8 @@ public class Auto extends Vehiculo {
         super(placa, marca, precio, cilindraje);
         this.tieneRadio = tieneRadio;
         this.tieneNavegador = tieneNavegador;
-        ajustarImpuestoCirculacion();
-        ajustarCuotaMesGaraje();
+        calcularImpuestoCirculacion();
+        //cambioMesGaraje();
     }
 
     public boolean isTieneRadio() {
@@ -33,7 +31,6 @@ public class Auto extends Vehiculo {
 
     public void setTieneRadio(boolean tieneRadio) {
         this.tieneRadio = tieneRadio;
-        ajustarImpuestoCirculacion();
     }
 
     public boolean isTieneNavegador() {
@@ -42,24 +39,28 @@ public class Auto extends Vehiculo {
 
     public void setTieneNavegador(boolean tieneNavegador) {
         this.tieneNavegador = tieneNavegador;
-        ajustarImpuestoCirculacion();
     }
 
-    private void ajustarImpuestoCirculacion() {
-        double impuestoBase = getPrecio() * 0.02;
+    @Override
+    public void calcularImpuestoCirculacion() {
+        super.calcularImpuestoCirculacion();
         if (tieneRadio) {
-            impuestoBase *= 1.01;
-        }
-        if (tieneNavegador) {
-            impuestoBase *= 1.02;
-        }
-        setImpuestoCirculacion(impuestoBase);
-    }
+            double impuestoRadio = getImpuestoCirculacion();
+            double aumento = (getPrecio() * 0.1);
+            setImpuestoCirculacion(impuestoRadio + aumento);
 
-    private void ajustarCuotaMesGaraje() {
-        if (getCilindraje() > 2499) {
-            double nuevaCuotaMes = getCuotaMesGaraje() * 1.20;
-            setCuotaMesGaraje(nuevaCuotaMes);
+            if (tieneRadio) {
+                double impuestoNavegador = getImpuestoCirculacion();
+                double incremento = (getPrecio() * 0.2);
+                setImpuestoCirculacion(impuestoNavegador + incremento);
+            }
+        }
+
+       /* private void cambioMesGaraje() {
+        if (getCilindraje() >= 2499) {
+            double impuestoCircul = getImpuestoCirculacion();
+            double incremento = (getCuotaMesGaraje() * 0.2);
+            setImpuestoCirculacion(impuestoCircul + incremento);
+        }*/
         }
     }
-}

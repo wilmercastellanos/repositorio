@@ -5,6 +5,16 @@ import java.util.Scanner;
 /**
  *
  * @author Wilmer Felipe Castellanos Salazar
+ *  h. Hacer un menú para la gestión del Garaje, con estas opciones;
+1.- Alquilar un espacio
+2.- Retirar vehículo
+3.- Consulta de ingresos mensuales
+4.- Consulta proporción autos / motos
+5.- Listado de matrículas y cuota mensual y tipo vehículo
+    i. Se debe siempre controlar que:
+• no se puedan alquilar más plazas de las existentes.
+• no haya más del 80% de plazas ocupadas por motos.
+• no se puede alquilar un vehículo si no tiene matricula.
  */
 public class MenuGaraje {
 
@@ -26,7 +36,7 @@ public class MenuGaraje {
             System.out.print("Seleccione una opción: ");
 
             opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -69,7 +79,7 @@ public class MenuGaraje {
         System.out.print("Ingrese el cilindraje del vehículo: ");
         int cilindraje = scanner.nextInt();
 
-        scanner.nextLine(); // Consumir el salto de línea
+        scanner.nextLine();
 
         System.out.print("¿Tiene sidecar (moto) o radio y navegador (auto)? (s/n): ");
         String tieneExtras = scanner.nextLine();

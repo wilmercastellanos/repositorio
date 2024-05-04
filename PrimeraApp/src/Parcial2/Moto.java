@@ -27,7 +27,7 @@ public final class Moto extends Vehiculo {
     public void setTieneSidecar(boolean tieneSidecar) {
         this.tieneSidecar = tieneSidecar;
     }
-
+    
     @Override
     public void calcularImpuestoCirculacion() {
         super.calcularImpuestoCirculacion();

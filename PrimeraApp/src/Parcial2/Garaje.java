@@ -4,7 +4,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author maria eugenia
+ * @author Wilmer Felipe Castellanos Salazar
+ * g. Crear una clase Garaje que tiene una colección (arreglo) de espacios de Vehículos. El
+número de espacios es una constante de la clase. Esta clase debe cumplir con la interfaz
+iGarage, que tiene estos métodos definidos:
+• double calcularIngresos(); Debe calcular la suma de ingresos mensuales de todos los
+vehículos existentes en el garaje
+• int calcularOcupacionPorTipoVehiculo(Vehículo v); Indica cuantos vehículos hay del
+tipo pasado por parámetro en el garaje.
  */
 public class Garaje implements iGaraje {
 private static final int NUMERO_ESPACIOS = 100; // Número de espacios en el garaje

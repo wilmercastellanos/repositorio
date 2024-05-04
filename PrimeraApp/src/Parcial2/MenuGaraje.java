@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MenuGaraje {
 
     private static final int NUMERO_ESPACIOS = 10; // Constante para el número de espacios
-    private static Vehiculo[] espacios = new Vehiculo[NUMERO_ESPACIOS]; // Arreglo de espacios para vehículos
+    private static final Vehiculo[] espacios = new Vehiculo[NUMERO_ESPACIOS]; // Arreglo de espacios para vehículos
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -202,7 +202,7 @@ public class MenuGaraje {
     }
 
     private static boolean esValidoAlquilarAuto(Vehiculo vehiculo) {
-        return true; // No hay restricciones para alquilar autos
+        return true;
     }
 
     private static void ingresarVehiculo(Vehiculo vehiculo) {

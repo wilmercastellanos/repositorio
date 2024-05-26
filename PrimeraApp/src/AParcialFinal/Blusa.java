@@ -8,7 +8,7 @@ package AParcialFinal;
 public class Blusa extends Componentes {
     boolean mangaLarga;
 
-    public Blusa(boolean mangaLarga, int id, String nombre, String talla, String color, boolean escomunitario, double precio) {
+    public Blusa(int id, String nombre, String talla, String color, boolean mangaLarga, int precio, boolean escomunitario) {
         super(id, nombre, talla, color, escomunitario, precio);
         this.mangaLarga = mangaLarga;
     }

@@ -11,7 +11,7 @@ public class Traje {
     private ArrayList<Componentes> piezas;
     private String nombre;
 
-    public Traje(ArrayList<Componentes> piezas, String nombre) {
+    public Traje(String nombre, ArrayList<Componentes> piezas) {
         this.piezas = piezas;
         this.nombre = nombre;
     }
@@ -32,12 +32,24 @@ public class Traje {
         this.nombre = nombre;
     }
 
+    public ArrayList<Componentes> getpiezas() {
+        return piezas;
+    }
+
+    public void setpiezas(ArrayList<Componentes> piezas) {
+        this.piezas = piezas;
+    }
+
+    public void addComponente(Componentes componentes) {
+        piezas.add(componentes);
+    }
+
     @Override
     public String toString() {
-        return "Traje{" + "piezas=" + piezas + ", nombre=" + nombre + '}';
+        return "Traje{" +
+                "nombre='" + nombre + '\'' +
+                ", piezas=" + piezas +
+                '}';
     }
-    
-    
-    
     
 }

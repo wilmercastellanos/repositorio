@@ -1,16 +1,18 @@
 
 package AParcialFinal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Wilmer Felipe Castellanos Salazar
  */
 public interface IFabricadeTrajes {
-    public void añadirComponenteAAlmacen();
-    public void listarComponentes();
-    public void listarTrajes();
-    public void activadDesactivarRebajas();
-    public void crearEnvío();
-    public void consultarEnvio();
-    
+    void añadirComponentesAAlmacen(Componentes componentes);
+    void listarComponentes();
+    void añadirTrajeAAlmacen(String nombre, ArrayList<Componentes> piezas);
+    void listarTrajes();
+    void activarDesactivarRebajas();
+    void crearEnvio();
+    void consultarEnvio();
 }

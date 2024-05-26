@@ -8,7 +8,7 @@ package AParcialFinal;
 public class Falda extends Componentes {   
     boolean conCremallera;
 
-    public Falda(boolean conCremallera, int id, String nombre, String talla, String color, boolean escomunitario, double precio) {
+    public Falda(int id, String nombre, String talla, String color, boolean conCremallera, int precio, boolean escomunitario) {
         super(id, nombre, talla, color, escomunitario, precio);
         this.conCremallera = conCremallera;
     }

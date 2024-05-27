@@ -5,13 +5,11 @@
         <group>
             <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/FabricaDeTrajes.java</file>
             <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/IFabricadeTrajes.java</file>
-            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/Pantalon.java</file>
-            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/Falda.java</file>
             <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/Traje.java</file>
-            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/Chaqueta.java</file>
-            <file>file:/C:/ejercisios/PrimeraApp/src/Parcial2/Garaje.java</file>
+            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/ExtracomunitarioException.java</file>
             <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/Componentes.java</file>
-            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/Blusa.java</file>
+            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/MangaException.java</file>
+            <file>file:/C:/ejercisios/PrimeraApp/src/AParcialFinal/IdException.java</file>
         </group>
     </open-files>
 </project-private>

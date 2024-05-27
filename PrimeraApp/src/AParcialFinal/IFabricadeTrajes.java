@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Wilmer Felipe Castellanos Salazar
  */
 public interface IFabricadeTrajes {
-    void añadirComponentesAAlmacen(Componentes componentes);
+    void añadirComponentesAAlmacen(Componentes componentes) throws IdException;
     void listarComponentes();
     void añadirTrajeAAlmacen(String nombre, ArrayList<Componentes> piezas);
     void listarTrajes();

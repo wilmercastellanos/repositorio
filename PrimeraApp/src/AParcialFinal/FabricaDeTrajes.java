@@ -34,12 +34,17 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
     }
 
     @Override
-    public void añadirComponentesAAlmacen(Componentes componentes) {
+    public void añadirComponentesAAlmacen(Componentes componentes) throws IdException {
+        for (Componentes c : componentesEnAlmacen) {
+            if (c.getId() == componentes.getId()) {
+                throw new IdException("El ID del componente ya existe.");
+            }
+        }
         componentesEnAlmacen.add(componentes);
     }
 
     @Override
-    public void añadirTrajeAAlmacen(String nombre, ArrayList<Componentes> piezas) {
+    public void añadirTrajeAAlmacen(String nombre, ArrayList<Componentes> piezas) {            
         Traje traje = new Traje(nombre, piezas);
         trajesEnAlmacen.add(traje);
     }
@@ -129,7 +134,7 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
 
     }
 
-    public void menuPrueba() {
+    public void menuPrueba() throws IdException {
         System.out.println("Que componentes desea crear: ");
         System.out.println("1-. Falda");
         System.out.println("2-. Chaqueta");
@@ -138,7 +143,7 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
         System.out.println("0-. volver al menu principal ");
     }
 
-    public void Prueba() {
+    public void Prueba() throws IdException {
 
         añadirComponentesAAlmacen(new Falda(1, "Falda Azul", "s", "Azul", false, 450, true));
         añadirComponentesAAlmacen(new Pantalon(23, "vaqueros", "M", "Gris", false, 280, true));
@@ -146,7 +151,8 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
         añadirComponentesAAlmacen(new Chaqueta(33, "Americana", "L", "Negro", false, 230, 6));
     }
 
-    public void crearComponenteDePrueba(Scanner pr) {
+    public void crearComponenteDePrueba(Scanner pr) throws IdException {
+        
         FabricaDeTrajes Messi = new FabricaDeTrajes();
         int SubOption;
         do {
@@ -183,7 +189,12 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
                     faldaEsComunitario = esComunitarioStr.equals("si");
                     Falda falda1 = new Falda(faldaId, faldaNombre, faldaTalla, faldaColor, faldaEsComunitario, (int) faldaPrecio,
                             faldaTieneCremallera);
-                    añadirComponentesAAlmacen(falda1);
+                    try {
+                        añadirComponentesAAlmacen(falda1);
+                        System.out.println("Falda añadida correctamente.");
+                    } catch (IdException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
                 case 2:
                     System.out.println("Introduce los datos de la Chaqueta :");
@@ -209,7 +220,12 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
                     int chaquetaBotones = pr.nextInt();
                     Chaqueta chaqueta1 = new Chaqueta(chaquetaId, chaquetaNombre, chaquetaTalla, chaquetaColor,
                             chaquetaEsComunitario, (int) chaquetaPrecio, chaquetaBotones);
-                    añadirComponentesAAlmacen(chaqueta1);
+                    try {
+                        añadirComponentesAAlmacen(chaqueta1);
+                        System.out.println("Chaqueta añadida correctamente.");
+                    } catch (IdException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
                 case 3:
                     System.out.println("Introduce los datos del Pantalon :");
@@ -234,12 +250,17 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
                     System.out.println("Tiene Cremallera (si/no): ");
                     String tieneCremmallera1;
                     boolean pantaTieneCremallera = true;
-                    Pantalon pantalon1 = new Pantalon(pantaId, pantaNombre, pantaTalla, pantaColor, pantaEsComunitario, (int) pantaPrecio, pantaTieneCremallera);
-                    añadirComponentesAAlmacen(pantalon1);
                     do {
                         tieneCremmallera1 = pr.nextLine().toLowerCase();
                     } while (!tieneCremmallera1.equals("si") && !tieneCremmallera1.equals("no"));
                     pantaEsComunitario = tieneCremmallera1.equals("si");
+                    Pantalon pantalon1 = new Pantalon(pantaId, pantaNombre, pantaTalla, pantaColor, pantaEsComunitario, (int) pantaPrecio, pantaTieneCremallera);
+                    try {
+                        añadirComponentesAAlmacen(pantalon1);
+                        System.out.println("Pantalón añadido correctamente.");
+                    } catch (IdException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
                 case 4:
                     System.out.println("Introduce los datos de la Blusa :");
@@ -269,7 +290,12 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
                     } while (!esMangalarga.equals("si") && !esMangalarga.equals("no"));
                     blusaEsMagalarga = esMangalarga.equals("si");
                     Blusa blusa1 = new Blusa(blusaId, blusaNombre, blusaTalla, blusaColor, blusaEsComunitario, (int) blusaPrecio, blusaEsMagalarga);
-                    añadirComponentesAAlmacen(blusa1);
+                    try {
+                        añadirComponentesAAlmacen(blusa1);
+                        System.out.println("Blusa añadida correctamente.");
+                    } catch (IdException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
                 case 0:
                     System.out.println("Regresando al menu pricipal: ");
@@ -285,9 +311,6 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
 
         }
     }
-       
-
-    
 
     public static void main(String[] args) {
         FabricaDeTrajes Messi = new FabricaDeTrajes();
@@ -316,7 +339,13 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
                     double precio = Leo.nextDouble();
                     Leo.nextLine();
                     Componentes barcelona = new Componentes(id, nombre, talla, color, esComunitario, precio);
-                    Messi.añadirComponentesAAlmacen(barcelona);
+                    try {
+                        Messi.añadirComponentesAAlmacen(barcelona);
+                        System.out.println("Componente añadido correctamente.");
+                    } catch (IdException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
+
                     break;
 
                 case 2:
@@ -357,7 +386,11 @@ public class FabricaDeTrajes implements IFabricadeTrajes {
                     break;
 
                 case 9:
-                   Messi.crearComponenteDePrueba(Leo);
+                    try {
+                        Messi.crearComponenteDePrueba(Leo);
+                    } catch (IdException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
 
                 case 0:
